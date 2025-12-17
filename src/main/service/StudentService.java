@@ -31,7 +31,42 @@ public class StudentServices {
 
     public Studententity getStudent(int id) {
 
-        return details.get(i)
+        return details.get(id);
+
+        }
+
+        // READ ALL
+
+        public List<Studententity> getStudents() {
+
+            return details.values().stream().collect(Collectors.toList());
+
+        }
+
+        // UPDATE
+
+        public Studententity updateStudent(int id, Studententity st) {
+
+            if (details.containsKey(id)) {
+
+                Studententity existing = details.get(id);
+
+                existing.setName(st.getName());
+
+                existing.setEmail(st.getEmail());
+
+                return existing;
+
+            }
+
+            return null;
+
+            }
+
+            }
+            }
+        }
+        }
     }
     }
 }
